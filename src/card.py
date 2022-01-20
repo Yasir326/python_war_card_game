@@ -2,6 +2,22 @@
 Card class which understands the suit, rank and value
 of each card
 """
+suits = ("♠", "♥", "♣", "♦")
+ranks = (
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+    "Jack",
+    "Queen",
+    "King",
+    "Ace",
+)
 values = {
     "Two": 2,
     "Three": 3,
@@ -18,14 +34,17 @@ values = {
     "Ace": 14,
 }
 
+
 class Card:
     def __init__(self, suit: str, rank: str):
         self.suit = suit
         self.rank = rank
-        self.values = values[rank]
+        self.value = values[rank]
 
     def __str__(self):
         return f"{self.rank} of {self.suit}"
 
 
+two_of_clubs = Card("Clubs", "Two")
+three_of_clubs = Card("Clubs", "Three")
 
