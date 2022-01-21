@@ -3,48 +3,40 @@ Card class which understands the suit, rank and value
 of each card
 """
 suits = ("♠", "♥", "♣", "♦")
-ranks = (
-    "Two",
-    "Three",
-    "Four",
-    "Five",
-    "Six",
-    "Seven",
-    "Eight",
-    "Nine",
-    "Ten",
-    "Jack",
-    "Queen",
-    "King",
-    "Ace",
-)
+ranks = ("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A")
 values = {
-    "Two": 2,
-    "Three": 3,
-    "Four": 4,
-    "Five": 5,
-    "Six": 6,
-    "Seven": 7,
-    "Eight": 8,
-    "Nine": 9,
-    "Ten": 10,
-    "Jack": 11,
-    "Queen": 12,
-    "King": 13,
-    "Ace": 14,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "J": 11,
+    "Q": 12,
+    "K": 13,
+    "A": 14,
 }
 
 
 class Card:
-    def __init__(self, suit: str, rank: str):
+    def __init__(self, suit: suits, rank: str):
+        if suit not in suits:
+            raise Exception("Suit must be one of (♠, ♥, ♣, ♦)")
         self.suit = suit
+        if rank not in ranks:
+            raise Exception(
+                "Rank must be one of (2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A)"
+            )
         self.rank = rank
         self.value = values[rank]
 
     def __str__(self):
-        return f"{self.rank} of {self.suit}"
+        return f"{self.rank}{self.suit}"
 
 
-two_of_clubs = Card("Clubs", "Two")
-three_of_clubs = Card("Clubs", "Three")
+# two_of_clubs = Card("♣", "2")
+# three_of_clubs = Card(suits[2], "3")
 
