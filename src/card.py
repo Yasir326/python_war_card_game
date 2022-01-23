@@ -4,8 +4,9 @@ of each card
 """
 from src.common.suits_and_ranks import suits, ranks, values
 
+
 class Card:
-    def __init__(self, suit:str, rank: str):
+    def __init__(self, suit: str, rank: str):
         if suit not in suits:
             raise Exception("Suit must be one of (♠, ♥, ♣, ♦)")
         self.suit = suit
@@ -18,7 +19,3 @@ class Card:
 
     def __str__(self):
         return f"{self.rank}{self.suit}"
-
-
-
-

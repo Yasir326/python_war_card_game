@@ -24,4 +24,3 @@ class TestCard(unittest.TestCase):
 
 if __name__ == "main":
     unittest.main()
-
