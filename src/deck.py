@@ -22,9 +22,6 @@ class Deck:
                 self.all_cards.append(created_card)
 
 
-    def __str__(self):
-        return self.all_cards
-
 
                   
 

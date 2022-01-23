@@ -6,6 +6,16 @@ class TestDeck(unittest.TestCase):
         new_deck = Deck()
         self.assertEqual(len(new_deck.all_cards), 52)
 
+    def test_first_card(self):
+        new_deck = Deck()
+        self.assertEqual(str(new_deck.all_cards[0]), "2♥")
+
+    def test_last_card(self):
+        new_deck = Deck()
+        self.assertEqual(str(new_deck.all_cards[-1]), "A♣")
+
+
+
 
 
 
