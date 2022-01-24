@@ -15,6 +15,14 @@ class TestDeck(unittest.TestCase):
         new_deck = Deck()
         self.assertEqual(str(new_deck.all_cards[-1]), "A♣")
 
+    def test_deck_is_shuffled(self):
+        new_deck = Deck()
+        new_deck.shuffle()
+        self.assertNotEqual(str(new_deck.all_cards[0]), "2♥")
+        self.assertNotEqual(str(new_deck.all_cards[-1]), "A♣")
+
+
+
 
 if __name__ == "main":
     unittest.main()
