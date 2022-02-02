@@ -17,13 +17,13 @@ class TestDeck(unittest.TestCase):
 
     def test_deck_is_shuffled(self):
         new_deck = Deck()
-        new_deck.shuffle()
+        new_deck.shuffle_deck()
         self.assertNotEqual(str(new_deck.all_cards[0]), "2♥")
         self.assertNotEqual(str(new_deck.all_cards[-1]), "A♣")
 
     def test_deal(self):
         new_deck = Deck()
-        card = new_deck.deal()
+        card = new_deck.deal_card()
         self.assertEqual(str(card), "A♣")
         self.assertEqual(len(new_deck.all_cards), 51)
 

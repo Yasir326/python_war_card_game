@@ -21,10 +21,10 @@ class Deck:
                 created_card = Card(suit, rank)
                 self.all_cards.append(created_card)
 
-    def shuffle(self):
+    def shuffle_deck(self):
         random.shuffle(self.all_cards)
 
-    def deal(self):
+    def deal_card(self):
         return self.all_cards.pop()
 
 
