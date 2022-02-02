@@ -22,7 +22,14 @@ class Deck:
                 self.all_cards.append(created_card)
 
     def shuffle(self):
-        return random.shuffle(self.all_cards)
+        random.shuffle(self.all_cards)
+
+    def deal(self):
+        return self.all_cards.pop()
+
+
+        
+            
 
 
   

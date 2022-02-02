@@ -21,6 +21,11 @@ class TestDeck(unittest.TestCase):
         self.assertNotEqual(str(new_deck.all_cards[0]), "2♥")
         self.assertNotEqual(str(new_deck.all_cards[-1]), "A♣")
 
+    def test_deal(self):
+        new_deck = Deck()
+        card = new_deck.deal()
+        self.assertEqual(str(card), "A♣")
+
 
 
 
