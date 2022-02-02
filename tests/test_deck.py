@@ -25,8 +25,7 @@ class TestDeck(unittest.TestCase):
         new_deck = Deck()
         card = new_deck.deal()
         self.assertEqual(str(card), "A♣")
-
-
+        self.assertEqual(len(new_deck.all_cards), 51)
 
 
 if __name__ == "main":
