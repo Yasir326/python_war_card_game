@@ -1,12 +1,22 @@
 import unittest
 from src.player import Player
 
-class TestDeck(unittest.TestCase):
 
+class TestDeck(unittest.TestCase):
     def test_player_created(self):
-        player_one = Player('Dave')
-        self.assertEqual(player_one.name,'Dave')
+        player_one = Player("Dave")
+        self.assertEqual(player_one.name, "Dave")
         self.assertEqual(len(player_one.all_cards), 0)
 
+    def test_add_cards(self):
+        player_one = Player("Dave")
+        self.assertEqual(player_one.name, "Dave")
+        self.assertEqual(len(player_one.all_cards), 0)
+        player_one.add_cards("3♥")
+        self.assertEqual(len(player_one.all_cards), 1)
+        self.assertEqual(player_one.all_cards[0], "3♥")
+
+
 if __name__ == "main":
-    unittest.main()        
+    unittest.main()
+
