@@ -1,3 +1,4 @@
+from importlib_metadata import List
 from src.common.suits_and_ranks import SuitsAndRanks
 from src.card import Card
 import random
@@ -22,3 +23,7 @@ class Deck:
 
     def deal_card(self) -> Card:
         return self.all_cards.pop()
+
+    def split_deck(self) -> List:
+        half = len(self.all_cards)//2
+        return self.all_cards[:half], self.all_cards[half:]    
