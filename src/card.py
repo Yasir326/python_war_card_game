@@ -1,7 +1,3 @@
-"""
-Card class which understands the suit, rank and value
-of each card
-"""
 from src.common.suits_and_ranks import suits, ranks, values
 
 
