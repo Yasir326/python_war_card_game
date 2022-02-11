@@ -12,7 +12,10 @@ class Player:
         self.all_cards = []
 
     def remove_one_card(self):
-        pass
+        return self.all_cards.pop(0)
 
     def add_cards(self, new_cards):
         self.all_cards.append(new_cards)
+
+    def __str__(self):
+        return f"Player {self.name} has {len(self.all_cards)} cards"

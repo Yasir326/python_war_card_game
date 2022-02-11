@@ -10,13 +10,19 @@ class TestDeck(unittest.TestCase):
 
     def test_add_cards(self):
         player_one = Player("Dave")
-        self.assertEqual(player_one.name, "Dave")
         self.assertEqual(len(player_one.all_cards), 0)
         player_one.add_cards("3♥")
         self.assertEqual(len(player_one.all_cards), 1)
         self.assertEqual(player_one.all_cards[0], "3♥")
 
+    def test_remove_one_card(self):
+        player_one = Player("Dave")
+        self.assertEqual(len(player_one.all_cards), 0)
+        player_one.add_cards("3♥")
+        self.assertEqual(len(player_one.all_cards), 1)
+        player_one.remove_one_card()
+        self.assertEqual(len(player_one.all_cards), 0)
+
 
 if __name__ == "main":
     unittest.main()
-
