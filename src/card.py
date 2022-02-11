@@ -1,4 +1,10 @@
-from src.common.suits_and_ranks import suits, ranks, values
+from src.common.suits_and_ranks import SuitsAndRanks
+
+suits_and_ranks = SuitsAndRanks()
+
+suits = suits_and_ranks.get_suits()
+ranks = suits_and_ranks.get_ranks()
+values = suits_and_ranks.get_values()
 
 
 class Card:

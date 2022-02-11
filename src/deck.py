@@ -1,6 +1,11 @@
-from src.common.suits_and_ranks import suits, ranks
+from src.common.suits_and_ranks import SuitsAndRanks
 from src.card import Card
 import random
+
+suits_and_ranks = SuitsAndRanks()
+
+suits = suits_and_ranks.get_suits()
+ranks = suits_and_ranks.get_ranks()
 
 
 class Deck:
@@ -12,8 +17,8 @@ class Deck:
                 created_card = Card(suit, rank)
                 self.all_cards.append(created_card)
 
-    def shuffle_deck(self):
+    def shuffle_deck(self) -> None:
         random.shuffle(self.all_cards)
 
-    def deal_card(self):
+    def deal_card(self) -> Card:
         return self.all_cards.pop()

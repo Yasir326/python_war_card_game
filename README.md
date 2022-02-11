@@ -3,6 +3,7 @@
 This is a simple program that simulates the card game [War](https://en.wikipedia.org/wiki/War_(card_game)).
 The program is written in [Python 3.9.4](https://www.python.org/)
 
+![](https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy-downsized-large.gif)
 ## Getting Started
 
 ### Pre-requisites
