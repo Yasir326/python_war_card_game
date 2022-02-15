@@ -35,7 +35,7 @@ def game_setup(player_one, player_two) -> None:
 
 
 def return_winner(player) -> None:
-    print(f"Player One is the one winner 🎉🎉🎉, {player} 🥳")
+    print(f"{player.name} is the one winner 🎉🎉🎉, {player} 🥳")
 
 
 def play_game() -> None:

@@ -12,5 +12,8 @@ class Player:
         else:
             self.all_cards.append(new_cards)
 
+    def name(self):
+        return self.name
+
     def __str__(self):
         return f"{self.name} has {len(self.all_cards)} cards"
