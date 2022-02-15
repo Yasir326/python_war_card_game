@@ -19,11 +19,11 @@ from src.deck import Deck
 
 
 def game_setup(player_one, player_two) -> None:
-    #Create Players
+    # Create Players
     player_one = Player(player_one)
     player_two = Player(player_two)
 
-    #Create Deck, shuffle and split it.
+    # Create Deck, shuffle and split it.
     deck = Deck()
     deck.shuffle_deck()
     player_one_deck, player_two_deck = deck.split_deck()
@@ -34,42 +34,32 @@ def game_setup(player_one, player_two) -> None:
     return player_one, player_two
 
 
+def return_winner(player) -> None:
+    print(f"Player One is the one winner 🎉🎉🎉, {player} 🥳")
+
+
 def play_game() -> None:
 
     game_on = True
-    player_one, player_two = game_setup('Matt', 'Tris')
+    player_one, player_two = game_setup("Matt", "Tris")
 
     while game_on:
         if len(player_one.all_cards) == 0 or len(player_two.all_cards) == 0:
-            game_on = False;
+            game_on = False
             if len(player_one.all_cards) > len(player_two.all_cards):
-                print(f'Player One is the one winner {player_one}')
+                return_winner(player_one)
             else:
-                print(f'Player Two is the one winner {player_two}')   
+                return_winner(player_two)
             break
 
         player_one_card = player_one.remove_one_card()
         player_two_card = player_two.remove_one_card()
 
         if player_one_card.rank > player_two_card.rank:
-            player_one.add_cards([player_two_card, player_one_card])
-        else: 
-            player_two.add_cards([player_one_card, player_two_card])
+            player_one.add_cards(player_two_card)
+        else:
+            player_two.add_cards(player_one_card)
+
 
 play_game()
-        
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
 
