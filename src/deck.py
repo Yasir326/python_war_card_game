@@ -25,5 +25,5 @@ class Deck:
         return self.all_cards.pop()
 
     def split_deck(self) -> List:
-        half = len(self.all_cards)//2
-        return self.all_cards[:half], self.all_cards[half:]    
+        half = len(self.all_cards) // 2
+        return self.all_cards[:half], self.all_cards[half:]

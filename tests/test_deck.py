@@ -27,6 +27,12 @@ class TestDeck(unittest.TestCase):
         self.assertEqual(str(card), "A♣")
         self.assertEqual(len(new_deck.all_cards), 51)
 
+    def test_split_deck(self):
+        new_deck = Deck()
+        player_one_deck, player_two_deck = new_deck.split_deck()
+        self.assertEqual(len(player_one_deck), 26)
+        self.assertEqual(len(player_two_deck), 26)
+
 
 if __name__ == "main":
     unittest.main()

@@ -1,4 +1,4 @@
-'''
+"""
 1. Create two instances of player class
 2. Create instance of a new deck 
 3. Shuffle Deck
@@ -13,17 +13,40 @@
 12. Break out of loop when War ended
 13. Check if player has lost.
 14. announce if player has won.
-'''
+"""
 from src.player import Player
 from src.deck import Deck
 
-player_one = Player('Matt')
-player_two = Player('Tris')
 
-deck = Deck()
-deck.shuffle_deck()
+def game_setup(player_one, player_two) -> None:
+    #Create Players
+    player_one = Player(player_one)
+    player_two = Player(player_two)
 
-player_one_deck, player_two_deck = deck.split_deck()
+    #Create Deck, shuffle and split it.
+    deck = Deck()
+    deck.shuffle_deck()
+    player_one_deck, player_two_deck = deck.split_deck()
+
+    player_one.add_cards(player_one_deck)
+    player_two.add_cards(player_two_deck)
+
+    return player_one, player_two
+
+
+# def play_game() -> None:
+
+#     game_on = True
+#     player_one, player_two = game_setup('Matt', 'Tris')
+
+#     while game_on:
+#         if len(player_one.add_cards) == 0 or len(player_two.add_cards) == 0:
+#             game_on = False;
+#             break
+#         else:
+
+
+        
 
 
 
