@@ -34,22 +34,31 @@ def game_setup(player_one, player_two) -> None:
     return player_one, player_two
 
 
-def return_winner(player) -> None:
-    print(f"{player.name} is the one winner 🎉🎉🎉, {player} 🥳")
+def return_winner(player, rounds) -> None:
+    print(
+        f"{player.name} is the winner 🎉🎉🎉, {player} 🥳 \n{player.name} won in {rounds} rounds"
+    )
 
 
 def play_game() -> None:
-
     game_on = True
     player_one, player_two = game_setup("Matt", "Tris")
+    num_of_rounds = 0
 
     while game_on:
+        num_of_rounds += 1
         if len(player_one.all_cards) == 0 or len(player_two.all_cards) == 0:
             game_on = False
             if len(player_one.all_cards) > len(player_two.all_cards):
-                return_winner(player_one)
+                # return_winner(player_one, num_of_rounds)
+                print(
+                    f"{player_one.name} is out of cards, {player_two.name} is the winner"
+                )
             else:
-                return_winner(player_two)
+                # return_winner(player_two, num_of_rounds)
+                print(
+                    f"{player_two.name} is out of cards, {player_one.name} is the winner"
+                )
             break
 
         player_one_card = player_one.remove_one_card()
@@ -60,8 +69,10 @@ def play_game() -> None:
         else:
             player_two.add_cards(player_one_card)
 
+    # update logic to have an array of cards for each player
+    # compare the length of the array to determine the winner
 
-        #add logic for war scenario            
+    # add logic for war scenario
 
 
 play_game()

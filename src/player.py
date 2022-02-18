@@ -12,7 +12,7 @@ class Player:
         else:
             self.all_cards.append(new_cards)
 
-    def name(self):
+    def name(self) -> str:
         return self.name
 
     def __str__(self):
