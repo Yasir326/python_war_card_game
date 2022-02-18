@@ -61,5 +61,8 @@ def play_game() -> None:
             player_two.add_cards(player_one_card)
 
 
+        #add logic for war scenario            
+
+
 play_game()
 
