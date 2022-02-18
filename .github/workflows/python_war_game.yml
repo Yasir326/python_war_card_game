@@ -28,6 +28,6 @@ jobs:
           pip install black
           black .
       - name: Run tests with pytest
-        run: | 
+        run: |
           pip install pytest
-          pytest    
+          pytest
