@@ -36,7 +36,7 @@ def game_setup(player_one, player_two) -> None:
 
 def return_winner(player, rounds) -> None:
     print(
-        f"{player.name} is the winner 🎉🎉🎉, {player} 🥳 \n{player.name} won in {rounds} rounds"
+        f"{player.name} is the winner 🎉🎉🎉, {player} remaining 🥳 \n{player.name} won in {rounds} rounds"
     )
 
 
@@ -50,15 +50,9 @@ def play_game() -> None:
         if len(player_one.all_cards) == 0 or len(player_two.all_cards) == 0:
             game_on = False
             if len(player_one.all_cards) > len(player_two.all_cards):
-                # return_winner(player_one, num_of_rounds)
-                print(
-                    f"{player_one.name} is out of cards, {player_two.name} is the winner"
-                )
+                return_winner(player_one, num_of_rounds)
             else:
-                # return_winner(player_two, num_of_rounds)
-                print(
-                    f"{player_two.name} is out of cards, {player_one.name} is the winner"
-                )
+                return_winner(player_two, num_of_rounds)
             break
 
         player_one_card = player_one.remove_one_card()
