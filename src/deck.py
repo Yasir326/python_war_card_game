@@ -18,12 +18,12 @@ class Deck:
                 created_card = Card(suit, rank)
                 self.all_cards.append(created_card)
 
-    def shuffle_deck(self) -> None:
-        random.shuffle(self.all_cards)
+    def shuffle_deck(self):
+        return random.shuffle(self.all_cards)
 
     def deal_card(self) -> Card:
         return self.all_cards.pop()
 
-    def split_deck(self) -> List:
+    def split_deck(self):
         half = len(self.all_cards) // 2
         return self.all_cards[:half], self.all_cards[half:]

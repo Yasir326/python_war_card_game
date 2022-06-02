@@ -1,9 +1,11 @@
+from src.card import Card
+
 class Player:
     def __init__(self, name: str):
         self.name = name
         self.all_cards = []
 
-    def remove_one_card(self):
+    def remove_one_card(self) -> Card:
         return self.all_cards.pop(0)
 
     def add_cards(self, new_cards) -> None:
@@ -15,5 +17,5 @@ class Player:
     def name(self) -> str:
         return self.name
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} has {len(self.all_cards)} cards"

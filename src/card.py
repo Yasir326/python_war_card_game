@@ -4,7 +4,7 @@ suits_and_ranks = SuitsAndRanks()
 
 suits = suits_and_ranks.get_suits()
 ranks = suits_and_ranks.get_ranks()
-values = suits_and_ranks.get_values()
+value = suits_and_ranks.get_values()
 
 
 class Card:
@@ -17,7 +17,7 @@ class Card:
                 "Rank must be one of (2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A)"
             )
         self.rank = rank
-        self.value = values[rank]
+        self.value = value[rank]
 
     def __str__(self):
         return f"{self.rank}{self.suit}"
