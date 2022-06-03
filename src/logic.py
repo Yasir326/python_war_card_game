@@ -30,6 +30,9 @@ def game_setup(player_one, player_two):
     player_one.add_cards(player_one_deck)
     player_two.add_cards(player_two_deck)
 
+    random.shuffle(player_one.all_cards)
+    random.shuffle(player_two.all_cards)
+
     return player_one, player_two
 
 
@@ -39,14 +42,14 @@ def return_winner(player, rounds):
     )
 
 
-def play_game():
+def play_game(player_one_name: str, player_two_name: str):
     game_on = True
-    player_one, player_two = game_setup("Matt", "Tris")
+    player_one, player_two = game_setup(player_one_name, player_two_name)
     num_of_rounds = 0
 
     while game_on:
         num_of_rounds += 1
-        print(f'{num_of_rounds}')
+        print(f"{num_of_rounds}")
         if len(player_one.all_cards) == 0:
             return_winner(player_two, num_of_rounds)
             game_on = False
@@ -57,8 +60,6 @@ def play_game():
             game_on = False
             break
 
-        random.shuffle(player_one.all_cards)
-        random.shuffle(player_two.all_cards)
         player_one_hand = []
         player_one_hand.append(player_one.remove_one_card())
 
@@ -94,7 +95,3 @@ def play_game():
                     for i in range(5):
                         player_one_hand.append(player_one.remove_one_card())
                         player_two_hand.append(player_two.remove_one_card())
-
-
-play_game()
-
